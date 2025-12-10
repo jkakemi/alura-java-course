@@ -1,0 +1,18 @@
+package br.com.alura.desafio03.exercicio4;
+
+public class Circulo implements Forma{
+    private double raio;
+
+    public void setRaio(double raio) {
+        this.raio = raio;
+    }
+
+    public double getRaio() {
+        return raio;
+    }
+
+    @Override
+    public double calcularArea() {
+        return Math.PI * raio * raio;
+    }
+}
