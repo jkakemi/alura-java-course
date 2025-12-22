@@ -77,17 +77,16 @@ public class AbrigoServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-//    @Test
-//    public void deveVerificarSeDispararRequisicaoPostSeraChamado() throws IOException, InterruptedException {
-//        String userInput = String.format("Teste%s pets.csv",
-//                System.lineSeparator());
-//        ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
-//        System.setIn(bais);
-//
-//        when(client.dispararRequisicaoPost(anyString(), any())).thenReturn(response);
-//
-//        petService.importarPetsDoAbrigo();
-//        verify(client.dispararRequisicaoPost(anyString(), anyString()), atLeast(1));
-//    }
+    @Test
+    public void deveVerificarSeDispararRequisicaoPostSeraChamado() throws IOException, InterruptedException {
+        String userInput = String.format("Teste%s%s", System.lineSeparator(), "pets.csv");
+        ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(bais);
+
+        when(client.dispararRequisicaoPost(anyString(), any())).thenReturn(response);
+
+        petService.importarPetsDoAbrigo();
+        verify(client.dispararRequisicaoPost(anyString(), anyString()), atLeast(1));
+    }
 
 }

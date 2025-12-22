@@ -32,7 +32,7 @@ public class AdopetConsoleApplication {
             e.printStackTrace();
         }
     }
-    
+
     private static void exibirMenu(){
         System.out.println("\nDIGITE O NÚMERO DA OPERAÇÃO DESEJADA:");
         System.out.println("1 -> Listar abrigos cadastrados");
